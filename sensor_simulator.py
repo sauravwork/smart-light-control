@@ -6,8 +6,8 @@ import random
 BROKER = "localhost"   # Change if using a remote broker
 TOPIC = "home/sensor"
 
-# Connect to broker
-client = mqtt.Client()
+# Connect with new callback API version
+client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 client.connect(BROKER)
 
 print("[Sensor] Simulator started...")

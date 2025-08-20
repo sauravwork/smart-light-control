@@ -10,7 +10,8 @@ def on_message(client, userdata, msg):
     else:
         print("[Light Bulb] ❌ Light is OFF")
 
-client = mqtt.Client()
+# Use new callback API version
+client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 client.connect(BROKER)
 client.subscribe(TOPIC)
 client.on_message = on_message

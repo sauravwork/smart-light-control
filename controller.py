@@ -4,7 +4,8 @@ BROKER = "localhost"
 SENSOR_TOPIC = "home/sensor"
 LIGHT_TOPIC = "home/light"
 
-client = mqtt.Client()
+# Use new callback API version
+client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 client.connect(BROKER)
 
 def on_message(client, userdata, msg):
